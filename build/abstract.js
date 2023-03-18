@@ -1,30 +1,28 @@
 "use strict";
-class Character {
-    constructor(name, damage, speed) {
+class student1 {
+    constructor(name, age) {
         this.name = name;
-        this.damage = damage;
-        this.attackSpeed = speed;
+        this.age = age;
     }
 }
-class Goblin extends Character {
-    constructor(name, damage, speed) {
-        super(name, damage, speed);
+class student2 extends student1 {
+    constructor(name, age) {
+        super(name, age);
     }
-    damagePerSecond() {
-        console.log("Name: " + this.name + " " + "\n" + "damagePerSecond: " + this.damage * this.attackSpeed);
-    }
-}
-class Goblin1 extends Character {
-    constructor(name, damage, speed) {
-        super(name, damage, speed);
-    }
-    damagePerSecond() {
-        console.log("Name: " + this.name + " " + "\n" + "damagePerSecond: " + this.damage / this.attackSpeed);
+    disp() {
+        console.log(`the name of the person is ${this.name} and age of the person is ${this.age}`);
     }
 }
-// let c = new Character('ABC', 123, 123);//Cannot create an instance of an abstract class
-// Character.damagePerSecond();
-let g = new Goblin('ABC', 123, 123);
-g.damagePerSecond();
-let g1 = new Goblin1('ABC', 123, 123);
-g1.damagePerSecond();
+var s2 = new student2('hari', 71);
+s2.disp();
+class student3 extends student2 {
+    constructor(name, age) {
+        super(name, age);
+    }
+    disp() {
+        console.log(`the name of the person is ${this.name} and age of the person is ${this.age}`);
+    }
+}
+// var s1=new student1(harita,21);
+var s3 = new student3('rani', 11);
+s3.disp();

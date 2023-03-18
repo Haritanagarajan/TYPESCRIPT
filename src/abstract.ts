@@ -1,41 +1,31 @@
- abstract class Character {
-    public name: string;
-    public damage: number;
-   public  attackSpeed: number;
-
-    constructor(name: string, damage: number, speed: number) {
-        this.name = name;
-        this.damage = damage;
-        this.attackSpeed = speed;
+ abstract class student1{
+   public name: string;
+   public age:number;
+    constructor(name:string,age:number){
+        this.name=name;
+        this.age=age;
     }
-
-    public abstract damagePerSecond():number;
-
-     }
-
-class Goblin extends Character {
-    constructor(name: string, damage: number, speed: number) {
-        super(name, damage, speed);
+    public abstract disp():any;
     }
+     class student2 extends student1{
+     constructor(name:string,age:number){
+            super(name,age);
+             }
+         disp():void{
+            console.log(`the name of the person is ${this.name} and age of the person is ${this.age}`);
+         }
+         }
+         var s2=new student2('hari',71);
+         s2.disp();
+         class student3 extends student2{
+            constructor(name:string,age:number){
+                   super(name,age);
+                    }
+                disp():any{
+                   console.log(`the name of the person is ${this.name} and age of the person is ${this.age}`);
+                }
+                }
 
-    public damagePerSecond(): any {
-        console.log("Name: " + this.name + " " + "\n" + "damagePerSecond: " + this.damage * this.attackSpeed);
-    }
-}
-class Goblin1 extends Character {
-    constructor(name: string, damage: number, speed: number) {
-        super(name, damage, speed);
-    }
-
-    public damagePerSecond(): any {
-        console.log("Name: " + this.name + " " + "\n" + "damagePerSecond: " + this.damage / this.attackSpeed);
-    }
-}
-
-// let c = new Character('ABC', 123, 123);//Cannot create an instance of an abstract class
-// Character.damagePerSecond();
-
-let g = new Goblin('ABC', 123, 123);
-g.damagePerSecond();
-let g1 = new Goblin1('ABC', 123, 123);
-g1.damagePerSecond();
+                // var s1=new student1(harita,21);
+                var s3=new student3('rani',11);
+                s3.disp();
